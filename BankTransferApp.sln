@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankTransferApp", "BankTran
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankTransferManager", "BankTransferManager\BankTransferManager.csproj", "{BC5DE292-5393-4FF1-8519-5967023A336C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankTransferTest", "BankTransferTest\BankTransferTest.csproj", "{5B2EBB0A-38CE-4EBE-A5D8-D55A2BD16D47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BC5DE292-5393-4FF1-8519-5967023A336C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC5DE292-5393-4FF1-8519-5967023A336C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC5DE292-5393-4FF1-8519-5967023A336C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B2EBB0A-38CE-4EBE-A5D8-D55A2BD16D47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2EBB0A-38CE-4EBE-A5D8-D55A2BD16D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2EBB0A-38CE-4EBE-A5D8-D55A2BD16D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2EBB0A-38CE-4EBE-A5D8-D55A2BD16D47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
