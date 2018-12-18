@@ -14,6 +14,12 @@ namespace BankTransferTest
         void CalculateArea();
     }
 
+    public interface ICalculateVolumetricFigures : ICalculationService
+    {
+        decimal? VolumeResult { get; set; }
+        void CalculateVolume();
+    }
+
     public class Triangle : ICalculationService
     {
         public Triangle(int length, int height)
@@ -83,4 +89,28 @@ namespace BankTransferTest
         }
     }
 
+    public class Hexagon : ICalculateVolumetricFigures
+    {
+        public Hexagon(int hexaSide)
+        {
+            HexaSide = hexaSide;
+        }
+
+        public int HexaSide { get; }
+
+        public decimal Result { get; set; }
+        public decimal? VolumeResult { get; set; }
+
+        public void CalculateArea()
+        {
+            Result = Convert.ToDecimal(Math.Pow((double)HexaSide, 2)*6);
+        }
+
+        public void CalculateVolume()
+        {
+            VolumeResult = Convert.ToDecimal(Math.Pow((double)HexaSide, 3));
+        }
+
+        public string ResultText() => VolumeResult != null ? $"Area is {Result} and Volume is {VolumeResult.Value}" : $"Area is {Result}";
+    }
 }

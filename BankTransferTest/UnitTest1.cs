@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
@@ -75,12 +77,39 @@ namespace BankTransferTest
             listOfFigures.Add(new Triangle(5,3));
             listOfFigures.Add(new Square(5));
             listOfFigures.Add(new Circle(10));
+            listOfFigures.Add(new Hexagon(10));
 
-            foreach (var figure in listOfFigures)
+            StringBuilder stringBuilder = new StringBuilder();
+            
+            listOfFigures.ForEach(f => Calc(stringBuilder, f));
+
+            foreach (var f in listOfFigures)
             {
-                figure.CalculateArea();
-                figure.ResultText();
+                Calc(stringBuilder, f);
             }
+
+            var resultString = stringBuilder.ToString();
+
+            var listOfValueFigures = new List<ICalculateVolumetricFigures>();
+            listOfValueFigures.Add(new Hexagon(5));
+
+            listOfValueFigures.ForEach(f => CalcVolume(stringBuilder, f));
+
+            var resultString2 = resultString.ToString();
+        }
+
+        private void Calc(StringBuilder sb, ICalculationService figure)
+        {
+            figure.CalculateArea();
+            sb.Append($"{figure.ResultText()}, ");
+        }
+
+        private void CalcVolume(StringBuilder sb, ICalculateVolumetricFigures figure)
+        {
+            figure.CalculateVolume();
+            sb.AppendLine();
+            sb.AppendLine();
+            Calc(sb, figure);
         }
     }
 }
