@@ -66,5 +66,21 @@ namespace BankTransferTest
 
             Assert.IsTrue(isItTrue);
         }
+
+        [TestMethod]
+        public void Calculate_Figures()
+        {
+            var listOfFigures = new List<ICalculationService>();
+
+            listOfFigures.Add(new Triangle(5,3));
+            listOfFigures.Add(new Square(5));
+            listOfFigures.Add(new Circle(10));
+
+            foreach (var figure in listOfFigures)
+            {
+                figure.CalculateArea();
+                figure.ResultText();
+            }
+        }
     }
 }
