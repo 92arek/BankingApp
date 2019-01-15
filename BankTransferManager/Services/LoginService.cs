@@ -18,7 +18,7 @@ namespace BankTransferManager.Services
 
         public User LoginUser(string name, string password)
         {
-            return users.SingleOrDefault(u => u.Name == name && u.Password == password);
+            return users.Single(u => u.Name == name && u.Password == password);
         }
 
     }
